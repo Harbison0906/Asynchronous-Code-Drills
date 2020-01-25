@@ -16,4 +16,13 @@ function getWords(word) {
 function done() {
   console.log(`Job's done!`);
 }
-done();
+
+function countdown(num, callback) {
+  let number = num
+  if (number > 0) {console.log(number)
+    number--;
+  setTimeout(function() {countdown(number, callback)}, 1000);
+  } else callback();
+}
+
+countdown(5, done);
