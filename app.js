@@ -25,4 +25,22 @@ function countdown(num, callback) {
   } else callback();
 }
 
-countdown(5, done);
+// countdown(5, done);
+
+let lunchTime = true;
+
+const orderMeSomeFood = () => {
+  return new Promise((resolve, reject) => {
+   if (lunchTime == true) {
+     let favLunch = {
+       lunch: 'Chick-Fil-A',
+       drink: 'Cherry Coke'
+     }
+    resolve(favLunch);
+   } else {
+     let err = new Error('An error has occurred.');
+     reject(err);
+   }
+  });
+};
+
